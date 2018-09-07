@@ -1,6 +1,6 @@
 {
   "name": "persistent-localstore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "local persistent storage",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,13 @@
     "storage"
   ],
   "author": "Nioxed",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nioxed/persistent-localstore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nioxed/persistent-localstore/issues"
+  },
+  "homepage": "https://github.com/Nioxed/persistent-localstore#readme"
 }

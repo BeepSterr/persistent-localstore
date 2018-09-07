@@ -1,5 +1,7 @@
     
-    var store = require('./index.js')();
+    var store = require('./index.js')({
+        filePath: './local-data.json'
+    });
 
     console.log( JSON.stringify(store.raw) );
     console.log( store.set('test', 'Hello Store!') )

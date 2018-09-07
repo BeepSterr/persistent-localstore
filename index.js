@@ -4,6 +4,14 @@
         this.ready = false;
         this.raw= {};
 
+        this.options = {
+            filePath: './local-data.json'
+        };
+
+        if(options != undefined){
+            this.options = options;
+        }
+
         this.set = function(key, value){
             this.raw[key] = value;
             return this.raw[key]
@@ -33,7 +41,7 @@
                 keys: this.raw
             }
 
-            fs.writeFile ('./data.json', JSON.stringify(file), { flag: 'w', encoding: 'utf8' }, function(err) {
+            fs.writeFile (this.options.filePath, JSON.stringify(file), { flag: 'w', encoding: 'utf8' }, function(err) {
                 
                 if (err) throw err;
 
@@ -45,7 +53,7 @@
 
         this.load = function() {
 
-            fs.readFile('./data.json', { flag: 'r', encoding: 'utf8' }, function (err, data) {
+            fs.readFile(this.options.filePath, { flag: 'r', encoding: 'utf8' }, function (err, data) {
                 
                 if (err) throw err;
 
@@ -57,7 +65,7 @@
         }
 
 
-        if(!fs.existsSync('./data.json')){
+        if(!fs.existsSync(this.options.filePath)){
 
             this.save();
             this.raw = {};
@@ -67,7 +75,7 @@
 
         }else{
 
-            var file = fs.readFileSync('./data.json');
+            var file = fs.readFileSync(this.options.filePath);
             this.raw = JSON.parse(file).keys;
             console.log('datafield loaded')
 
