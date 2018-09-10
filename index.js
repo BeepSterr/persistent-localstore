@@ -14,22 +14,25 @@
 
         this.set = function(key, value){
             this.raw[key] = value;
-            return this.raw[key]
-            this.save();
+            //return this.raw[key]
+            return this;
         }
 
         this.get = function(key, fallbackValue){
             return this.raw[key]
+            //return this;
         }
 
         this.unset = function(key){
             delete this.raw[key];
-            return this.raw[key]
+            //return this.raw[key]
             this.save();
+            return this;
         }
 
         this.clear = function(){
             this.raw = {};
+            return this;
         }
 
         this.save = function() {
@@ -48,6 +51,7 @@
                 this.load();
 
             });
+            return this;
 
         }
 
@@ -61,6 +65,7 @@
                 this.raw = file.keys 
 
             });
+            return this;
 
         }
 
