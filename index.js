@@ -14,8 +14,9 @@
 
         this.set = function(key, value){
             this.raw[key] = value;
-            return this.raw[key]
             this.save();
+            
+            return this.raw[key]
         }
 
         this.get = function(key, fallbackValue){
@@ -24,8 +25,9 @@
 
         this.unset = function(key){
             delete this.raw[key];
-            return this.raw[key]
             this.save();
+
+            return this.raw[key]
         }
 
         this.clear = function(){
