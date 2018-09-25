@@ -15,7 +15,7 @@
         this.set = function(key, value){
             this.raw[key] = value;
             this.save();
-            
+
             return this.raw[key]
         }
 
@@ -73,13 +73,10 @@
             this.raw = {};
             ready = true;
 
-            console.log('datafield created')
-
         }else{
 
             var file = fs.readFileSync(this.options.filePath);
             this.raw = JSON.parse(file).keys;
-            console.log('datafield loaded')
 
         }
 
